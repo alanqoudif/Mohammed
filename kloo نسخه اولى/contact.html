@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز القاعات - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>مدرسة إمام بركات</h1>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="schedules.html">الجداول الدراسية</a></li>
+                    <li><a href="room-booking.html">حجز الغرف</a></li>
+                    <li><a href="library.html">المكتبة</a></li>
+                    <li><a href="contact.html">اختيار المواد</a></li>
+                </ul>
+            </nav>
+            <button id="logoutButton" onclick="logout()">تسجيل الخروج</button>
+
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .subject-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .subject-list li {
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 10px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>اختيار المواد</h2>
+
+    <form id="subject-form" action="submit_selection.php" method="post">
+        <!-- حقل اسم الطالب -->
+        <label for="student-name">اسم الطالب:</label>
+        <input type="text" id="student-name" name="student_name" placeholder="ادخل اسم الطالب" required>
+
+        <!-- حقل الصف -->
+        <label for="class-grade">الصف:</label>
+        <input type="text" id="class-grade" name="class_grade" placeholder="ادخل الصف" required>
+
+        <!-- قائمة المواد -->
+        <label>اختر المواد:</label>
+        <ul class="subject-list">
+            <li><input type="checkbox" name="subjects[]" value="رياضيات"> رياضيات</li>
+
+            <li><input type="checkbox" name="subjects[]" value="علوم"> علوم</li>
+
+            <li><input type="checkbox" name="subjects[]" value="عربي"> عربي</li>
+
+            <li><input type="checkbox" name="subjects[]" value="تاريخ"> تاريخ</li>
+            
+            <li><input type="checkbox" name="subjects[]" value="فيزياء"> فيزياء</li>
+        </ul>
+
+        <!-- زر الإرسال -->
+        <button type="submit">اختيار</button>
+    </form>
+
+</body>
+</html>

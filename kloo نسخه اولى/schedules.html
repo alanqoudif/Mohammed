@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الجداول الدراسية - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>مدرسة إمام بركات</h1>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="schedules.html">الجداول الدراسية</a></li>
+                    <li><a href="room-booking.html">حجز الغرف</a></li>
+                    <li><a href="library.html">المكتبة</a></li>
+                    <li><a href="contact.html">اختيار المواد</a></li>
+                </ul>
+            </nav>
+            <button id="logoutButton" onclick="logout()">تسجيل الخروج</button>
+
+        </div>
+    </header>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #class-select, #class-input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .schedule-table {
+            display: none;
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>الجدول المدرسي</h1>
+    <label for="class-select">اختر الصف:</label>
+    <select id="class-select">
+        <option value="">اختر الصف</option>
+        <option value="grade10">الصف العاشر</option>
+        <option value="grade11">الصف الحادي عشر</option>
+        <option value="grade12">الصف الثاني عشر</option>
+    </select>
+
+    <label for="class-input">أو اكتب اسم الصف:</label>
+ 
+    
+
+
+    <input type="text" id="class-input" placeholder="اكتب اسم الصف هنا">
+
+    <!-- جداول الصفوف -->
+    <table id="grade10-schedule" class="schedule-table">
+        <thead>
+            <tr>
+                <th>اليوم</th>
+                <th>الحصة الأولى</th>
+                <th>الحصة الثانية</th>
+                <th>الحصة الثالثة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>الأحد</td>
+                <td>رياضيات</td>
+                <td>علوم</td>
+                <td>لغة عربية</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="grade11-schedule" class="schedule-table">
+        <thead>
+            <tr>
+                <th>اليوم</th>
+                <th>الحصة الأولى</th>
+                <th>الحصة الثانية</th>
+                <th>الحصة الثالثة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>الأحد</td>
+                <td>فيزياء</td>
+                <td>كيمياء</td>
+                <td>رياضيات</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="grade12-schedule" class="schedule-table">
+        <thead>
+            <tr>
+                <th>اليوم</th>
+                <th>الحصة الأولى</th>
+                <th>الحصة الثانية</th>
+                <th>الحصة الثالثة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>الأحد</td>
+                <td>أحياء</td>
+                <td>كيمياء</td>
+                <td>فيزياء</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const classSelect = document.getElementById('class-select');
+        const classInput = document.getElementById('class-input');
+        const grade10Schedule = document.getElementById('grade10-schedule');
+        const grade11Schedule = document.getElementById('grade11-schedule');
+        const grade12Schedule = document.getElementById('grade12-schedule');
+
+        // دالة لإخفاء جميع الجداول
+        function hideAllSchedules() {
+            grade10Schedule.style.display = 'none';
+            grade11Schedule.style.display = 'none';
+            grade12Schedule.style.display = 'none';
+        }
+
+        // عند تغيير القائمة المنسدلة
+        classSelect.addEventListener('change', function() {
+            hideAllSchedules();
+            const selectedClass = classSelect.value;
+
+            // إظهار الجدول بناءً على الصف المختار
+            if (selectedClass === 'grade10') {
+                grade10Schedule.style.display = 'table';
+            } else if (selectedClass === 'grade11') {
+                grade11Schedule.style.display = 'table';
+            } else if (selectedClass === 'grade12') {
+                grade12Schedule.style.display = 'table';
+            }
+        });
+
+                       // التحقق من قيمة الإدخال وإظهار الجدول المناسب
+                       if (inputClass === 'الصف العاشر') {
+                grade10Schedule.style.display = 'table';
+            } else if (inputClass === 'الصف الحادي عشر') {
+                grade11Schedule.style.display = 'table';
+            } else if (inputClass === '  12/6') {
+                grade12Schedule.style.display = 'table';
+            }
+        ;
+    </script>
+
+</body>
+</html>

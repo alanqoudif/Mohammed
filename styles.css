@@ -1,0 +1,437 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+/* شريط التنقل */
+nav {
+    background-color: #2e8b57; /* لون أخضر داكن */
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: right;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #3cb371; /* لون أخضر فاتح عند التمرير */
+}
+
+/* شعار المدرسة */
+nav ul li.logo a {
+    padding: 0;
+}
+
+nav ul li.logo img {
+    height: 50px; /* ضبط حجم الشعار */
+}
+
+/* رأس الصفحة */
+header {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    border-bottom: 2px solid #2e8b57;
+}
+
+header img {
+    height: 100px; /* ضبط حجم الشعار في الرأس */
+}
+
+header h1 {
+    color: #2e8b57;
+    margin: 10px 0 5px 0;
+}
+
+header p {
+    color: #555;
+    font-size: 1.1em;
+}
+
+/* الأقسام */
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* العناوين */
+h1, h2 {
+    color: #2e8b57;
+}
+
+h2 {
+    border-bottom: 2px solid #2e8b57;
+    padding-bottom: 5px;
+}
+
+/* الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #2e8b57;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #3cb371;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2fff2;
+}
+
+/* الأزرار */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2e8b57;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #3cb371;
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: #2e8b57;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+
+/* css/styles.css */
+
+/* متغيرات الألوان */
+:root {
+    --primary-green: #2e8b57;
+    --secondary-green: #3cb371;
+    --light-green: #e6ffe6;
+    --text-color: #555;
+    --background-color: #f4f4f4;
+    --header-background: #fff;
+    --nav-background: var(--primary-green);
+    --footer-background: var(--primary-green);
+    --nav-hover: var(--secondary-green);
+}
+
+/* إعدادات عامة */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+
+/* شريط التنقل */
+nav {
+    background-color: var(--nav-background);
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--nav-hover);
+    border-radius: 4px;
+}
+
+/* شعار المدرسة في التنقل */
+nav ul li.logo a img {
+    height: 50px;
+}
+
+/* رأس الصفحة */
+header {
+    padding: 20px;
+    background-color: var(--header-background);
+    text-align: center;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+header img {
+    height: 100px;
+}
+
+header h1 {
+    color: var(--primary-green);
+    margin: 10px 0 5px 0;
+}
+
+header p {
+    color: var(--text-color);
+    font-size: 1.1em;
+}
+
+/* الأقسام */
+section {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* العناوين */
+h1, h2 {
+    color: var(--primary-green);
+}
+
+h2 {
+    border-bottom: 2px solid var(--primary-green);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* الجداول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid var(--primary-green);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--secondary-green);
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2fff2;
+}
+
+/* الأزرار */
+button, .button {
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover, .button:hover {
+    background-color: var(--secondary-green);
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: var(--footer-background);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* تنسيقات المربعات */
+.box-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.box {
+    background-color: var(--light-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 8px;
+    width: 30%;
+    min-width: 200px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    background-color: #d4f4e5;
+}
+
+.hidden {
+    display: none;
+}
+
+.link-box {
+    background-color: var(--light-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 8px;
+    width: 30%;
+    min-width: 150px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.link-box a {
+    text-decoration: none;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+.link-box:hover {
+    transform: scale(1.05);
+    background-color: #d4f4e5;
+}
+
+/* استعلامات الوسائط لجعل الموقع متجاوبًا */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        float: none;
+        width: 100%;
+    }
+
+    header img {
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    .box, .link-box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .box, .link-box {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.box-container .box, .link-box {
+    transition: transform 0.3s, background-color 0.3s, opacity 0.5s;
+}
+
+.hidden.show {
+    display: block;
+    opacity: 1;
+}
+
+
+
+
+
+
+/* إضافة تأثيرات الانتقال */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.box-container .box, .link-box {
+    transition: transform 0.3s, background-color 0.3s, opacity 0.5s;
+}
+
+.hidden.show {
+    display: block;
+    opacity: 1;
+}

@@ -1,0 +1,251 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.school-development, .school-news, .school-photos, .student-awards {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e9ecef;
+}
+
+.school-photos .photo-gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.school-photos .photo-gallery img {
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+/* تصميم جدول الحجز */
+.booking-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: right;
+}
+
+.booking-table th, .booking-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.booking-table thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.booking-table tbody tr {
+    background-color: #f9f9f9;
+}
+
+.booking-table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.booking-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.booking-table .booked {
+    background-color: #f8d7da;
+}
+
+.booking-table .booked td {
+    color: #721c24;
+}
+
+.booking-table button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.booking-table button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.booking-table button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+
+/* login-styles.css */
+
+body {
+    margin: 40;
+    padding: 40;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* لون خلفية يخلق بيئة تعليمية */
+    background-image: url(""); /* خلفية ذات طابع مدرسي */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: rgba(21, 10, 10, 0.9); /* صندوق شفاف قليلاً */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(86, 213, 137, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #6a93d4;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input-box {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-box label {
+    display: block;
+    font-size: 14px;
+    color: #7cbecc;
+    margin-bottom: 5px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.input-box input:focus {
+    border-color: #bfcbd8; /* تغيير لون الإطار عند التركيز */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #57595a; /* لون عند التمرير */
+}
+
+.login-box::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('banar\ barkat\ scool.jpg'); /* شعار المدرسة */
+    background-size: cover;
+    margin: 0 auto 20px auto;
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+    }
+}

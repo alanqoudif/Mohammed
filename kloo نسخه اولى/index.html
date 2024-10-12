@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<h1>الصفحه الرئيسيه</h1>
+<body onload="displayWelcomeMessage()">
+    <header>
+        <div class="header-content">
+            <h1>مدرسة إمام بركات</h1>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="schedules.html">الجداول الدراسية</a></li>
+                    <li><a href="room-booking.html">حجز الغرف</a></li>
+                    <li><a href="library.html">المكتبة</a></li>
+                    <li><a href="contact.html">اختيار المواد</a></li>
+                </ul>
+            </nav>
+            <button id="logoutButton" onclick="logout()">تسجيل الخروج</button>
+
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>مرحبا بكم في موقع مدرسة إمام بركات</h2>
+            <p id="welcome-message"></p>
+        </section>
+
+        <!-- قسم التطور المدرسي -->
+        <section class="school-development">
+            <h2>التطور المدرسي</h2>
+            <p>شهدت المدرسة تطورًا كبيرًا في السنوات الأخيرة، مع تحسينات في البنية التحتية وتحديث المناهج الدراسية.</p>
+        </section>
+
+        <!-- قسم أخبار المدرسة -->
+        <section class="school-news">
+            <h2>أخبار المدرسة</h2>
+            <p>تم مؤخراً تنظيم العديد من الفعاليات والأنشطة في المدرسة، بما في ذلك حفل توزيع الجوائز السنوي.</p>
+        </section>
+
+        <!-- قسم صور المدرسة -->
+        <section class="school-photos">
+            <h2>صور المدرسة</h2>
+            <div class="photo-gallery">
+                <img src="school-photo1.jpg" alt="صورة للمدرسة">
+                <img src="school-photo2.jpg" alt="صورة للطلاب">
+                <img src="school-photo3.jpg" alt="صورة للفصول الدراسية">
+            </div>
+        </section>
+
+        <!-- قسم تكريم الطلاب -->
+        <section class="student-awards">
+            <h2>تكريم الطلاب</h2>
+            <p>نفتخر بتكريم طلابنا المتميزين الذين أظهروا أداءً استثنائيًا في مختلف المجالات الأكاديمية والأنشطة اللامنهجية.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 مدرسة إمام بركات</p>
+    </footer>
+</body>
+</html>

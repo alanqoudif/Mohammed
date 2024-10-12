@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز القاعات - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>مدرسة إمام بركات</h1>
+            <nav>
+                <ul class="nav-buttons">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="schedules.html">الجداول الدراسية</a></li>
+                    <li><a href="room-booking.html">حجز الغرف</a></li>
+                    <li><a href="library.html">المكتبة</a></li>
+                    <li><a href="contact.html">اختيار المواد</a></li>
+                </ul>
+            </nav>
+            <button id="logoutButton" onclick="logout()">تسجيل الخروج</button>
+
+        </div>
+    </header>
+    <header>
+        <h1>الجدول المدرسي - حجز القاعات</h1>
+    </header>
+    
+    <main>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>الوقت</th>
+                    <th>الأحد</th>
+                    <th>الإثنين</th>
+                    <th>الثلاثاء</th>
+                    <th>الأربعاء</th>
+                    <th>الخميس</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>08:00 - 09:00</td> 
+                    <td><button onclick="bookSession(this, 'الأحد', '08:00 - 09:00')">احجز الآن</button></td>
+                    <td><button onclick="bookSession(this, 'الإثنين', '08:00 - 09:00')">احجز الآن</button></td>
+                    <td><button onclick="bookSession(this, 'الثلاثاء', '08:00 - 09:00')">احجز الآن</button></td>
+                    <td><button onclick="bookSession(this, 'الأربعاء', '08:00 - 09:00')">احجز الآن</button></td>
+                    <td><button onclick="bookSession(this, 'الخميس', '08:00 - 09:00')">احجز الآن</button></td>
+                </tr>
+                <!-- المزيد من الأوقات يمكن إضافتها هنا -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 مدرسة إمام بركات</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة - مدرسة إمام بركات</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo"><a href="index.html"><img src="banar barkat scool.jpg" alt="شعار المدرسة"> </a></li>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="schedule.html">الجداول المدرسية</a></li>
+            <li><a href="staff.html">الهيئة الدراسية</a></li>
+            <li><a href="library.html">المكتبة</a></li>
+            <li><a href="courses.html" id="courses-link" style="display: none;">اختيار مواد</a></li>
+            <li><a href="login.html">تسجيل الخروج</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="banar barkat scool.jpg" alt="شعار المدرسة">
+        <h1>المكتبة</h1>
+        <p>استكشف مجموعتنا الواسعة من الكتب التعليمية والترفيهية.</p>
+    </header>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .library {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .book {
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book:hover {
+            transform: scale(1.05);
+        }
+
+        .book img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .book-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .book button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book button:hover {
+            background-color: #0056b3;
+        }
+
+        /* نموذج تأجير الكتاب (نافذة منبثقة) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .modal-content input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>مكتبة المدرسة</h2>
+
+    <!-- عرض الكتب -->
+    <div class="library">
+        <div class="book">
+            <img src="book test.JPG..webp" alt="كتاب 1">
+            <div class="book-title">كتاب الرياضيات</div>
+            <button onclick="openModal('كتاب الرياضيات')">تأجير الكتاب</button>
+        </div>
+        <div class="book">
+            <img src="book test 1.jpeg.webp" alt="كتاب 2">
+            <div class="book-title">كتاب العلوم</div>
+            <button onclick="openModal('كتاب العلوم')">تأجير الكتاب</button>
+        </div>
+        <div class="book">
+            <img src="book test 2.png.webp" alt="كتاب 3">
+            <div class="book-title">كتاب التاريخ</div>
+            <button onclick="openModal('كتاب التاريخ')">تأجير الكتاب</button>
+        </div>
+
+        <div class="book">
+            <img src="book tes3.png - Copy.webp" alt="كتاب 3">
+            <div class="book-title">كتاب التاريخ</div>
+            <button onclick="openModal('كتاب التاريخ')">تأجير الكتاب</button>
+        </div>
+        <!-- يمكنك إضافة المزيد من الكتب هنا -->
+    </div>
+
+    <!-- نموذج تأجير الكتاب (نافذة منبثقة) -->
+    <div id="rentalModal" class="modal">
+        <div class="modal-content">
+            <h3 id="book-title"></h3>
+            <form id="rental-form">
+                <input type="text" id="student-name" name="student_name" placeholder="اسم الطالب" required>
+                <input type="text" id="student-grade" name="student_grade" placeholder="الصف" required>
+                <button type="submit">تأجير</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // فتح النافذة المنبثقة وعرض تفاصيل الكتاب
+        function openModal(bookTitle) {
+            document.getElementById('book-title').innerText = bookTitle;
+            document.getElementById('rentalModal').style.display = 'flex';
+        }
+
+        // إغلاق النافذة المنبثقة عند النقر خارج المحتوى
+        window.onclick = function(event) {
+            var modal = document.getElementById('rentalModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // إرسال النموذج ومعالجة التأجير
+        document.getElementById('rental-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // منع إعادة تحميل الصفحة
+
+            // جمع بيانات الطالب
+            var studentName = document.getElementById('student-name').value;
+            var studentGrade = document.getElementById('student-grade').value;
+            var bookTitle = document.getElementById('book-title').innerText;
+
+            // يمكنك هنا إرسال البيانات إلى السيرفر أو تخزينها كما تريد
+            alert("تم تأجير " + bookTitle + " للطالب " + studentName + " في الصف " + studentGrade);
+
+            // إغلاق النافذة المنبثقة بعد التأجير
+            document.getElementById('rentalModal').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>
